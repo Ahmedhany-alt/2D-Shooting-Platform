@@ -22,7 +22,7 @@ var character_sprite : Sprite2D
 
 func _ready():
 	current_state = State.Idle
-	muzzle_position = muzzle_position
+	muzzle_position = muzzle.position
 
 
 func _physics_process(delta : float):
@@ -91,9 +91,9 @@ func player_muzzle_position():
 	var direction =input_movement()
 	
 	if direction > 0:
-		muzzle_position.x = muzzle_position.x
+		muzzle_position.x = muzzle.position.x
 	elif direction < 0: 
-		muzzle_position.x = -muzzle_position.x
+		muzzle_position.x = -muzzle.position.x
 
 
 func  player_animations():
@@ -114,3 +114,9 @@ func input_movement():
 	var direction : float = Input.get_axis("move_left", "move_right")
 	
 	return direction
+
+
+func _on_hurt_box_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Enemy"):
+		print("Enemy_entered")
+	HealthManager.decrease_health(body.damage_amount)

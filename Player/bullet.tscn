@@ -30,6 +30,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6nv6n"]
+radius = 3.1622777
+
 [node name="Bullet" type="AnimatedSprite2D" unique_id=1859409003]
 sprite_frames = SubResource("SpriteFrames_p3bpn")
 animation = &"Bullet"
@@ -41,4 +44,13 @@ wait_time = 5.0
 one_shot = true
 autostart = true
 
+[node name="Hitbox" type="Area2D" parent="." unique_id=677863704]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=146664988]
+shape = SubResource("CircleShape2D_6nv6n")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
