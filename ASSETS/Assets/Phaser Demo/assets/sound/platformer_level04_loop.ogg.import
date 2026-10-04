@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bb2rfolprw74a"
+path="res://.godot/imported/platformer_level04_loop.ogg-da6a86c4cefb06ffc9cb32a6e658fcfa.oggvorbisstr"
+
+[deps]
+
+source_file="res://ASSETS/Assets/Phaser Demo/assets/sound/platformer_level04_loop.ogg"
+dest_files=["res://.godot/imported/platformer_level04_loop.ogg-da6a86c4cefb06ffc9cb32a6e658fcfa.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
