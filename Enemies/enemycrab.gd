@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var patrol_points : Node
 @export var speed : int = 1500
 @export var wait_time : int = 3
+@export var damage_amount : int = 10
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var timer = $Timer
