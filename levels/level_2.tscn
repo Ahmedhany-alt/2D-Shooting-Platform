@@ -1,12 +1,13 @@
-[gd_scene format=3 uid="uid://btr5gtiei0oxv"]
+[gd_scene format=3 uid="uid://bqrumqnv44qgr"]
 
-[ext_resource type="PackedScene" uid="uid://6muh65475gt2" path="res://levels/base_level.tscn" id="1_jirdo"]
-[ext_resource type="PackedScene" uid="uid://owsqejlrl3tm" path="res://backgrounds/parallax_background.tscn" id="2_bt44k"]
-[ext_resource type="PackedScene" uid="uid://bodvs8825t1dv" path="res://Enemies/enemycrab.tscn" id="3_bt44k"]
+[ext_resource type="PackedScene" uid="uid://6muh65475gt2" path="res://levels/base_level.tscn" id="1_v5uil"]
+[ext_resource type="PackedScene" uid="uid://owsqejlrl3tm" path="res://backgrounds/parallax_background.tscn" id="2_5722l"]
+[ext_resource type="PackedScene" uid="uid://bodvs8825t1dv" path="res://Enemies/enemycrab.tscn" id="3_ilhis"]
+[ext_resource type="PackedScene" uid="uid://c6dqp6ec1d76q" path="res://UI/Main_Menu_Screen.tscn" id="4_ep78u"]
 
-[node name="level1" unique_id=222502523 instance=ExtResource("1_jirdo")]
+[node name="level1" unique_id=222502523 instance=ExtResource("1_v5uil")]
 
-[node name="ParallaxBackground" parent="." index="0" unique_id=1850233621 instance=ExtResource("2_bt44k")]
+[node name="ParallaxBackground" parent="." index="0" unique_id=1850233621 instance=ExtResource("2_5722l")]
 
 [node name="TileMap" parent="." index="1" unique_id=701736584]
 layer_0/navigation_enabled = false
@@ -32,7 +33,7 @@ editor_draw_limits = true
 
 [node name="Enemies" type="Node" parent="." index="3" unique_id=1703323299]
 
-[node name="Enemycrab" parent="Enemies" index="0" unique_id=1870059261 node_paths=PackedStringArray("patrol_points") instance=ExtResource("3_bt44k")]
+[node name="Enemycrab" parent="Enemies" index="0" unique_id=1870059261 node_paths=PackedStringArray("patrol_points") instance=ExtResource("3_ilhis")]
 position = Vector2(239, -60)
 patrol_points = NodePath("Patrolpoints")
 
@@ -44,3 +45,5 @@ position = Vector2(-125, 22)
 
 [node name="Point2" type="Marker2D" parent="Enemies/Enemycrab/Patrolpoints" index="1" unique_id=1292371176]
 position = Vector2(-16, 21)
+
+[node name="MainMenuScreen" parent="." index="4" unique_id=1628776058 instance=ExtResource("4_ep78u")]

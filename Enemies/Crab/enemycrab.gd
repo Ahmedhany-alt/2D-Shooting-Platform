@@ -70,12 +70,13 @@ func enemy_walk(delta :float):
 		if  current_point_position >= number_of_points:
 			current_point_position = 0
 
-		current_point = point_positions[current_point_position]
 
-		if current_point.x > position.x:
-			direction = Vector2.RIGHT
-		else:
-			direction = Vector2.LEFT
+	current_point = point_positions[current_point_position]
+
+	if current_point.x > position.x:
+		direction = Vector2.RIGHT
+	else:
+		direction = Vector2.LEFT
 		
 		can_walk = false
 		timer.start()
