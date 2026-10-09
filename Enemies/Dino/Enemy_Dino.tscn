@@ -107,7 +107,7 @@ animations = [{
 radius = 14.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cpdn7"]
-radius = 36.013885
+radius = 33.13608
 
 [node name="Enemy_Dino" type="CharacterBody2D" unique_id=1907456436]
 collision_layer = 4

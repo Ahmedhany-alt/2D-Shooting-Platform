@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bodvs8825t1dv"]
 
-[ext_resource type="Script" uid="uid://cdul6ouhgxddb" path="res://Enemies/Crab/enemycrab.gd" id="1_0avlr"]
-[ext_resource type="Texture2D" uid="uid://0vyvif6e1qaw" path="res://Enemies/Crab/crab-idle.png" id="1_jogfp"]
-[ext_resource type="Texture2D" uid="uid://8svfmugrvpig" path="res://Enemies/Crab/crab-walk.png" id="2_0avlr"]
+[ext_resource type="Script" uid="uid://cdul6ouhgxddb" path="res://Enemies/enemycrab.gd" id="1_0avlr"]
+[ext_resource type="Texture2D" uid="uid://0vyvif6e1qaw" path="res://Enemies/crab-idle.png" id="1_jogfp"]
+[ext_resource type="Texture2D" uid="uid://8svfmugrvpig" path="res://Enemies/crab-walk.png" id="2_0avlr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1lhsv"]
 atlas = ExtResource("1_jogfp")
@@ -82,7 +82,7 @@ animations = [{
 radius = 13.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6nv6n"]
-radius = 15.0
+radius = 18.110771
 
 [node name="Enemycrab" type="CharacterBody2D" unique_id=1870059261 groups=["Enemy"]]
 collision_layer = 4

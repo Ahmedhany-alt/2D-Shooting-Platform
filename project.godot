@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 GameManager="*uid://cu1xobe1h8ps4"
 HealthManager="*uid://dhv74pflgw512"
+CollectableManager="*uid://7twd3ffhe7og"
+SceneManager="*uid://b4dv4xp3ifjpa"
 
 [display]
 
@@ -59,6 +61,9 @@ shoot={
 2d_physics/layer_1="GROUND"
 2d_physics/layer_2="PLAYER"
 2d_physics/layer_3="ENEMY"
+2d_physics/layer_4="Pickup"
+2d_physics/layer_5="Collectables"
+2d_physics/layer_6="DOORS"
 
 [physics]
 
