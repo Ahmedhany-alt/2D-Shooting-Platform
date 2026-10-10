@@ -101,13 +101,14 @@ func playe_shooting(delta : float):
 		current_state = State.shoot
 
 
+
 func player_muzzle_position():
-	var direction =input_movement()
-	
-	if direction > 0:
-		muzzle_position.x = muzzle.position.x
-	elif direction < 0: 
-		muzzle_position.x = -muzzle.position.x
+	if animated_sprite_2d.flip_h:
+		muzzle.position.x = -abs(muzzle_position.x)
+	else:
+		muzzle.position.x = abs(muzzle_position.x)
+
+
 
 
 func  player_animations():
@@ -137,7 +138,7 @@ func input_movement():
 func _on_hurt_box_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemy"):
 		print("Enemy_entered")
-		hit_animation_on_player
+		hit_animation_on_player.play("hit")
 		HealthManager.decrease_health(body.damage_amount) 
 	
 	if HealthManager.current_health == 0:

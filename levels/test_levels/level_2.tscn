@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://owsqejlrl3tm" path="res://backgrounds/parallax_background.tscn" id="2_o4poo"]
 [ext_resource type="PackedScene" uid="uid://bodvs8825t1dv" path="res://Enemies/enemycrab.tscn" id="3_40b8l"]
 [ext_resource type="PackedScene" uid="uid://c6dqp6ec1d76q" path="res://UI/Main_Menu_Screen.tscn" id="4_hkwb8"]
+[ext_resource type="PackedScene" uid="uid://c03syj85v3exy" path="res://Enemies/Dino/Enemy_Dino.tscn" id="4_sq8jt"]
 
 [node name="level1" unique_id=222502523 instance=ExtResource("1_sq8jt")]
 
@@ -29,14 +30,19 @@ jump_count = 3
 [node name="Enemycrab" parent="Enemies" index="0" unique_id=1870059261 node_paths=PackedStringArray("patrol_points") instance=ExtResource("3_40b8l")]
 position = Vector2(239, -60)
 patrol_points = NodePath("Patrolpoints")
+speed = 50
 
 [node name="Patrolpoints" type="Node2D" parent="Enemies/Enemycrab" index="3" unique_id=1780343620]
 position = Vector2(43, -10)
 
 [node name="Point1" type="Marker2D" parent="Enemies/Enemycrab/Patrolpoints" index="0" unique_id=1302758922]
-position = Vector2(-125, 22)
+position = Vector2(-92, 11)
 
 [node name="Point2" type="Marker2D" parent="Enemies/Enemycrab/Patrolpoints" index="1" unique_id=1292371176]
-position = Vector2(-16, 21)
+position = Vector2(2, 14)
+
+[node name="Enemy_Dino" parent="Enemies" index="1" unique_id=1907456436 instance=ExtResource("4_sq8jt")]
+position = Vector2(539, -24)
 
 [node name="MainMenuScreen" parent="." index="4" unique_id=1628776058 instance=ExtResource("4_hkwb8")]
+visible = false

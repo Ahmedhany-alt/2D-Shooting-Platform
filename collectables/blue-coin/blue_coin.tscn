@@ -62,6 +62,7 @@ script = ExtResource("1_ao2vb")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=81322497]
 sprite_frames = SubResource("SpriteFrames_p3bpn")
 autoplay = "default"
+frame_progress = 0.1554329
 
 [node name="Area2D" type="Area2D" parent="." unique_id=27831018]
 collision_layer = 16
@@ -73,10 +74,17 @@ shape = SubResource("CircleShape2D_p3bpn")
 debug_color = Color(0.8382942, 0.37766725, 0.25672007, 0.41960785)
 
 [node name="Label" type="Label" parent="." unique_id=1061406590]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -20.0
-offset_top = -13.0
+offset_top = -11.5
 offset_right = 20.0
-offset_bottom = 10.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
 text = "1"
 horizontal_alignment = 1
 

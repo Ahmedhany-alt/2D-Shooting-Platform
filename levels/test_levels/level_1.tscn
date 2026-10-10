@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://owsqejlrl3tm" path="res://backgrounds/parallax_background.tscn" id="2_84fkc"]
 [ext_resource type="PackedScene" uid="uid://bodvs8825t1dv" path="res://Enemies/enemycrab.tscn" id="3_n8wpj"]
 [ext_resource type="PackedScene" uid="uid://cpec7gytiin5v" path="res://levels/door/door.tscn" id="4_odejv"]
+[ext_resource type="PackedScene" uid="uid://xwvdtq33ir4i" path="res://collectables/blue-coin/blue_coin.tscn" id="5_84fkc"]
 
 [node name="level1" unique_id=222502523 instance=ExtResource("1_pr3bd")]
 
@@ -25,6 +26,7 @@ position = Vector2(920, -16)
 
 [node name="Player" parent="." index="3" unique_id=288211789]
 position = Vector2(32, -70)
+collision_mask = 29
 
 [node name="Enemies" type="Node" parent="." index="4" unique_id=1703323299]
 
@@ -40,3 +42,6 @@ position = Vector2(-125, 22)
 
 [node name="Point2" type="Marker2D" parent="Enemies/Enemycrab/Patrolpoints" index="1" unique_id=1292371176]
 position = Vector2(-16, 21)
+
+[node name="blue_coin" parent="." index="6" unique_id=646253081 instance=ExtResource("5_84fkc")]
+position = Vector2(120, -64)
