@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://82lqcbbch5jh"]
 
-[ext_resource type="PackedScene" uid="uid://6muh65475gt2" path="res://levels/test_levels/base_level.tscn" id="1_7dtao"]
+[ext_resource type="PackedScene" uid="uid://6muh65475gt2" path="res://levels/base_level.tscn" id="1_7dtao"]
 [ext_resource type="PackedScene" uid="uid://owsqejlrl3tm" path="res://backgrounds/parallax_background.tscn" id="2_kpfnq"]
-[ext_resource type="PackedScene" uid="uid://bslo2laxs4bwj" path="res://backgrounds/healthpickup.tscn" id="3_n6wdg"]
+[ext_resource type="PackedScene" uid="uid://bslo2laxs4bwj" path="res://pickups/healthpickup.tscn" id="3_n6wdg"]
 [ext_resource type="PackedScene" uid="uid://cy0etxg6pwcmp" path="res://UI/gamescreen.tscn" id="5_mo4vu"]
 [ext_resource type="PackedScene" uid="uid://cpec7gytiin5v" path="res://levels/door/door.tscn" id="6_n6wdg"]
 [ext_resource type="PackedScene" uid="uid://xwvdtq33ir4i" path="res://collectables/blue-coin/blue_coin.tscn" id="7_dvnjj"]

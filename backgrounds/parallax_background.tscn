@@ -12,14 +12,14 @@ position = Vector2(3, -2)
 motion_mirroring = Vector2(360, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="BackgroundParallaxLayer" unique_id=6567874]
-position = Vector2(722.00006, -473)
-scale = Vector2(1.4999999, 1.5)
+position = Vector2(1530, -913)
+scale = Vector2(4.8666673, 4.2500005)
 texture = ExtResource("1_fdrpr")
 centered = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="BackgroundParallaxLayer" unique_id=86191203]
-position = Vector2(1.0000024, -473.00003)
-scale = Vector2(1.5083334, 1.5)
+position = Vector2(10.000001, -910)
+scale = Vector2(4.8291664, 4.2443185)
 texture = ExtResource("1_fdrpr")
 centered = false
 
@@ -28,13 +28,13 @@ motion_scale = Vector2(0.9, 0.9)
 motion_mirroring = Vector2(816, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="MidGroundParallaxLayer" unique_id=142619879]
-position = Vector2(4.000029, -475)
-scale = Vector2(1.326, 1.5)
+position = Vector2(-1, -924.99994)
+scale = Vector2(3.0257351, 4.3806815)
 texture = ExtResource("2_lh40e")
 centered = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="MidGroundParallaxLayer" unique_id=381061346]
-position = Vector2(363, -474.00003)
-scale = Vector2(1.6764705, 1.505682)
+position = Vector2(1638.0001, -926)
+scale = Vector2(3.0367649, 4.3920455)
 texture = ExtResource("2_lh40e")
 centered = false
