@@ -88,6 +88,7 @@ radius = 18.110771
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_0avlr")
+damage_amount = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=73297199]
 position = Vector2(0, -14)

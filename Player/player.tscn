@@ -8,7 +8,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_flgld"]
 shader = ExtResource("2_k53q1")
-shader_parameter/enabled = false
+shader_parameter/enabled = true
 shader_parameter/hit_colur = Color(1, 0.007843, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gwnis"]
@@ -255,7 +255,7 @@ height = 36.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6nv6n"]
 
 [sub_resource type="Animation" id="Animation_k53q1"]
-length = 0.001
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -263,16 +263,15 @@ tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/enabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false]
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_fhl08"]
-resource_name = "hig"
+resource_name = "hit"
 length = 0.2
-loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -281,21 +280,22 @@ tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/enabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(-0.033333335, 0.9),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(-0.033333335, 0, 0.2, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [true, false]
+"values": [true, true, false, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vtle1"]
 _data = {
 &"RESET": SubResource("Animation_k53q1"),
-&"hig": SubResource("Animation_fhl08")
+&"hit": SubResource("Animation_fhl08")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=288211789]
+[node name="Player" type="CharacterBody2D" unique_id=288211789 groups=["Player"]]
 position = Vector2(0, -24)
 collision_layer = 2
+collision_mask = 17
 script = ExtResource("1_btcbx")
 jump = -300
 
@@ -324,5 +324,6 @@ shape = SubResource("CapsuleShape2D_6nv6n")
 
 [node name="HitAnimationPlayer" type="AnimationPlayer" parent="." unique_id=1917835393]
 libraries/ = SubResource("AnimationLibrary_vtle1")
+autoplay = &"RESET"
 
 [connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]

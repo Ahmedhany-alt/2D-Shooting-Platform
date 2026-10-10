@@ -107,16 +107,18 @@ animations = [{
 radius = 14.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cpdn7"]
-radius = 33.13608
+radius = 73.061615
 
 [node name="Enemy_Dino" type="CharacterBody2D" unique_id=1907456436]
 collision_layer = 4
+collision_mask = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=756191988]
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_6nv6n")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
+frame_progress = 0.63159
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1616430418]
 position = Vector2(-1, -11)
