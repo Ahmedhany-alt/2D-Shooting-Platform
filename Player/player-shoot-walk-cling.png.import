@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://va5wl2crq1qk"
-path="res://.godot/imported/player-run-shoot.png-e3b7dbb9ccafcbc55fac6a41129c3d7b.ctex"
+uid="uid://byr4xdtyjckh8"
+path="res://.godot/imported/player-shoot-walk-cling.png-12ad5447c9bd5407eec6b92ab9af73e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/player-run-shoot.png"
-dest_files=["res://.godot/imported/player-run-shoot.png-e3b7dbb9ccafcbc55fac6a41129c3d7b.ctex"]
+source_file="res://Player/player-shoot-walk-cling.png"
+dest_files=["res://.godot/imported/player-shoot-walk-cling.png-12ad5447c9bd5407eec6b92ab9af73e2.ctex"]
 
 [params]
 
