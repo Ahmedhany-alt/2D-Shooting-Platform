@@ -6,7 +6,8 @@ var player_death_effect = preload("res://PLAYERdeatheffect/playerdeath_effect.ts
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var muzzle : Marker2D = $Muzzle
 @onready var hit_animation_on_player = $HitAnimationPlayer
-
+@onready var damage_timer : Timer = $DamageTimer
+var touching_enemies: Array[Node2D] = []
 const GRAVITY = 1000
 @export var speed: int = 1000
 @export var max_horizontal_speed: int = 300
@@ -135,12 +136,51 @@ func input_movement():
 	return direction
 
 
+
+
+
+
+
 func _on_hurt_box_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Enemy"):
-		print("Enemy_entered")
-		hit_animation_on_player.play("hit")
-		HealthManager.decrease_health(body.damage_amount) 
-	
-	if HealthManager.current_health == 0:
+	if not body.is_in_group("Enemy"):
+		return
+
+	if body not in touching_enemies:
+		touching_enemies.append(body)
+
+	if damage_timer.is_stopped():
+		apply_enemy_damage()
+		damage_timer.start()
+
+
+
+func _on_hurt_box_body_exited(body: Node2D) -> void:
+	touching_enemies.erase(body)
+	if touching_enemies.is_empty():
+		damage_timer.stop()
+
+
+
+
+func apply_enemy_damage() -> void:
+	touching_enemies = touching_enemies.filter(
+		func(enemy): return is_instance_valid(enemy)
+	)
+
+	if touching_enemies.is_empty():
+		damage_timer.stop()
+		return
+
+	var enemy = touching_enemies[0]
+
+	hit_animation_on_player.play("hit")
+	HealthManager.decrease_health(enemy.damage_amount)
+
+	if HealthManager.current_health <= 0:
 		player_death()
-	
+
+
+
+
+func _on_damage_timer_timeout() -> void:
+	apply_enemy_damage()

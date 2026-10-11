@@ -21,11 +21,14 @@ GameManager="*uid://cu1xobe1h8ps4"
 HealthManager="*uid://dhv74pflgw512"
 CollectableManager="*uid://7twd3ffhe7og"
 SceneManager="*uid://b4dv4xp3ifjpa"
+SettingsManager="*uid://b1wai0ks054qs"
+InventoryManager="*uid://c85rccaely3h1"
 
 [display]
 
 window/size/viewport_width=640
 window/size/viewport_height=360
+window/size/mode=4
 window/size/maximize_disabled=true
 window/size/window_width_override=960
 window/size/window_height_override=540
@@ -68,6 +71,8 @@ shoot={
 2d_physics/layer_4="Pickup"
 2d_physics/layer_5="Collectables"
 2d_physics/layer_6="DOORS"
+2d_physics/layer_7="KEYS"
+2d_physics/layer_15="Attack_Area"
 
 [physics]
 

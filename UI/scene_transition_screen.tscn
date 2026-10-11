@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c263kjmwu8vad"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_6nv6n"]
+
+[node name="SceneTransitionScreen" type="CanvasLayer" unique_id=345093726]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=804884485]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_6nv6n")

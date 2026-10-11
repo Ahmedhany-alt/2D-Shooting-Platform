@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://b1i5mbujovw8w"]
+
+[ext_resource type="Script" uid="uid://bu1g1tibk1yc2" path="res://collectables/blue-coin/red_coin.gd" id="1_3mjcq"]
+[ext_resource type="Texture2D" uid="uid://b7cq0ww0g2ah2" path="res://collectables/coins-chests-etc-2-0.png" id="2_ntg8g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntg8g"]
+atlas = ExtResource("2_ntg8g")
+region = Rect2(304, 384, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbefy"]
+atlas = ExtResource("2_ntg8g")
+region = Rect2(320, 384, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5scc3"]
+atlas = ExtResource("2_ntg8g")
+region = Rect2(336, 384, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2myqa"]
+atlas = ExtResource("2_ntg8g")
+region = Rect2(352, 384, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5se0"]
+atlas = ExtResource("2_ntg8g")
+region = Rect2(368, 384, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyphr"]
+atlas = ExtResource("2_ntg8g")
+region = Rect2(384, 384, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p3bpn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntg8g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbefy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5scc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2myqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5se0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyphr")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p3bpn"]
+radius = 8.062258
+
+[node name="red_coin" type="Node2D" unique_id=646253081]
+script = ExtResource("1_3mjcq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=81322497]
+sprite_frames = SubResource("SpriteFrames_p3bpn")
+autoplay = "default"
+frame_progress = 0.87639767
+
+[node name="Area2D" type="Area2D" parent="." unique_id=27831018]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=492689712]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_p3bpn")
+debug_color = Color(0.8382942, 0.37766725, 0.25672007, 0.41960785)
+
+[node name="Label" type="Label" parent="." unique_id=1061406590]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "5"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

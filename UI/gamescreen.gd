@@ -9,3 +9,8 @@ func _ready():
 
 func on_collectable_award_recieved(total_award : int):
 	collectable_label.text = str(total_award)
+
+
+
+func _on_pause_texture_button_pressed() -> void:
+	GameManager.pause_game()

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c03syj85v3exy"]
 
 [ext_resource type="Texture2D" uid="uid://kaxkekgo6ye5" path="res://Enemies/Dino/dino.png" id="1_abimx"]
+[ext_resource type="Script" uid="uid://brbkxixpoyvk6" path="res://Enemies/Dino/enemy_dino.gd" id="1_kvbn2"]
 [ext_resource type="Texture2D" uid="uid://6bxvhmiyo0fv" path="res://Enemies/Dino/dino-idle.png" id="2_5fih7"]
 [ext_resource type="Script" uid="uid://c21a5jt0la2ew" path="res://Enemies/Dino/gravity.gd" id="3_5fih7"]
 [ext_resource type="Script" uid="uid://biaaqoowkij3a" path="res://Enemies/Dino/state_machine_controller.gd" id="4_rfah7"]
@@ -109,9 +110,15 @@ radius = 14.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_cpdn7"]
 radius = 73.061615
 
-[node name="Enemy_Dino" type="CharacterBody2D" unique_id=1907456436]
+[sub_resource type="CircleShape2D" id="CircleShape2D_r5728"]
+radius = 34.058773
+
+[node name="Enemy_Dino" type="CharacterBody2D" unique_id=1907456436 groups=["Enemy"]]
 collision_layer = 4
 collision_mask = 3
+script = ExtResource("1_kvbn2")
+health_amount = null
+damage_amount = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=756191988]
 position = Vector2(0, -13)
@@ -121,7 +128,7 @@ autoplay = "idle"
 frame_progress = 0.63159
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1616430418]
-position = Vector2(-1, -11)
+position = Vector2(-1, -9)
 shape = SubResource("CircleShape2D_6nv6n")
 
 [node name="Gravity" type="Node" parent="." unique_id=1937544777 node_paths=PackedStringArray("Character_body_2d", "animated_sprite_2d")]
@@ -151,12 +158,23 @@ speed = 100
 
 [node name="AttackArea2D" type="Area2D" parent="." unique_id=549935649]
 position = Vector2(-1, -11)
-collision_layer = 4
+collision_layer = 16384
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea2D" unique_id=1450367583]
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_cpdn7")
 debug_color = Color(0.7609171, 0.4515676, 0.050861575, 0.41960785)
 
+[node name="HurtBox" type="Area2D" parent="." unique_id=260820182]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1876341956]
+position = Vector2(-1, -10)
+shape = SubResource("CircleShape2D_r5728")
+debug_color = Color(0.922263, 0.028042613, 0.67938995, 0.41960785)
+
 [connection signal="body_entered" from="AttackArea2D" to="StateMachineController" method="_on_attack_area_2d_body_entered"]
 [connection signal="body_exited" from="AttackArea2D" to="StateMachineController" method="_on_attack_area_2d_body_exited"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

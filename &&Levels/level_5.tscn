@@ -5,6 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://cy0etxg6pwcmp" path="res://UI/gamescreen.tscn" id="3_jvpju"]
 [ext_resource type="PackedScene" uid="uid://bodvs8825t1dv" path="res://Enemies/enemycrab.tscn" id="4_e62r5"]
 [ext_resource type="PackedScene" uid="uid://bslo2laxs4bwj" path="res://pickups/healthpickup.tscn" id="5_n7cdq"]
+[ext_resource type="PackedScene" uid="uid://c03syj85v3exy" path="res://Enemies/Dino/Enemy_Dino.tscn" id="6_rirls"]
+[ext_resource type="PackedScene" uid="uid://xwvdtq33ir4i" path="res://collectables/blue-coin/blue_coin.tscn" id="7_r1gwd"]
+[ext_resource type="PackedScene" uid="uid://dwpftacdl380e" path="res://collectables/blue-coin/green_coin.tscn" id="8_jvpju"]
+[ext_resource type="PackedScene" uid="uid://b1i5mbujovw8w" path="res://collectables/blue-coin/red_coin.tscn" id="9_e62r5"]
 
 [node name="level5" unique_id=222502523 instance=ExtResource("1_rirls")]
 
@@ -34,7 +38,6 @@ jump_count = 3
 [node name="Enemycrab" parent="Enemies" index="0" unique_id=1870059261 node_paths=PackedStringArray("patrol_points") instance=ExtResource("4_e62r5")]
 position = Vector2(1086, 5)
 patrol_points = NodePath("Patrolpoints")
-damage_amount = 1
 
 [node name="Patrolpoints" type="Node2D" parent="Enemies/Enemycrab" index="3" unique_id=1780343620]
 position = Vector2(43, -10)
@@ -48,7 +51,6 @@ position = Vector2(-16, 21)
 [node name="Enemycrab2" parent="Enemies" index="1" unique_id=2118006853 node_paths=PackedStringArray("patrol_points") instance=ExtResource("4_e62r5")]
 position = Vector2(614, 0)
 patrol_points = NodePath("Patrolpoints")
-damage_amount = 1
 
 [node name="Patrolpoints" type="Node2D" parent="Enemies/Enemycrab2" index="3" unique_id=1300193971]
 position = Vector2(43, -10)
@@ -62,7 +64,6 @@ position = Vector2(-16, 21)
 [node name="Enemycrab3" parent="Enemies" index="2" unique_id=1676427183 node_paths=PackedStringArray("patrol_points") instance=ExtResource("4_e62r5")]
 position = Vector2(2046, 0)
 patrol_points = NodePath("Patrolpoints")
-damage_amount = 1
 
 [node name="Patrolpoints" type="Node2D" parent="Enemies/Enemycrab3" index="3" unique_id=3695827]
 position = Vector2(43, -10)
@@ -76,7 +77,6 @@ position = Vector2(-16, 21)
 [node name="Enemycrab4" parent="Enemies" index="3" unique_id=864253135 node_paths=PackedStringArray("patrol_points") instance=ExtResource("4_e62r5")]
 position = Vector2(2619, 1)
 patrol_points = NodePath("Patrolpoints")
-damage_amount = 1
 
 [node name="Patrolpoints" type="Node2D" parent="Enemies/Enemycrab4" index="3" unique_id=996373782]
 position = Vector2(43, -10)
@@ -90,7 +90,6 @@ position = Vector2(-16, 21)
 [node name="Enemycrab5" parent="Enemies" index="4" unique_id=915254412 node_paths=PackedStringArray("patrol_points") instance=ExtResource("4_e62r5")]
 position = Vector2(2399, 4)
 patrol_points = NodePath("Patrolpoints")
-damage_amount = 1
 
 [node name="Patrolpoints" type="Node2D" parent="Enemies/Enemycrab5" index="3" unique_id=1351470525]
 position = Vector2(43, -10)
@@ -118,7 +117,6 @@ position = Vector2(-16, 21)
 [node name="Enemycrab7" parent="Enemies" index="6" unique_id=2142705721 node_paths=PackedStringArray("patrol_points") instance=ExtResource("4_e62r5")]
 position = Vector2(2427, -454)
 patrol_points = NodePath("Patrolpoints")
-damage_amount = 1
 
 [node name="Patrolpoints" type="Node2D" parent="Enemies/Enemycrab7" index="3" unique_id=2006078366]
 position = Vector2(43, -10)
@@ -132,7 +130,6 @@ position = Vector2(-16, 21)
 [node name="Enemycrab8" parent="Enemies" index="7" unique_id=466833192 node_paths=PackedStringArray("patrol_points") instance=ExtResource("4_e62r5")]
 position = Vector2(3022, 0)
 patrol_points = NodePath("Patrolpoints")
-damage_amount = 1
 
 [node name="Patrolpoints" type="Node2D" parent="Enemies/Enemycrab8" index="3" unique_id=1166633969]
 position = Vector2(43, -10)
@@ -146,7 +143,6 @@ position = Vector2(-16, 21)
 [node name="Enemycrab9" parent="Enemies" index="8" unique_id=1302897044 node_paths=PackedStringArray("patrol_points") instance=ExtResource("4_e62r5")]
 position = Vector2(2819, 3)
 patrol_points = NodePath("Patrolpoints")
-damage_amount = 1
 
 [node name="Patrolpoints" type="Node2D" parent="Enemies/Enemycrab9" index="3" unique_id=1026329751]
 position = Vector2(43, -10)
@@ -160,7 +156,6 @@ position = Vector2(-16, 21)
 [node name="Enemycrab10" parent="Enemies" index="9" unique_id=737891055 node_paths=PackedStringArray("patrol_points") instance=ExtResource("4_e62r5")]
 position = Vector2(1843, -276)
 patrol_points = NodePath("Patrolpoints")
-damage_amount = 1
 
 [node name="Patrolpoints" type="Node2D" parent="Enemies/Enemycrab10" index="3" unique_id=528548872]
 position = Vector2(43, -10)
@@ -174,7 +169,6 @@ position = Vector2(-16, 21)
 [node name="Enemycrab11" parent="Enemies" index="10" unique_id=873586471 node_paths=PackedStringArray("patrol_points") instance=ExtResource("4_e62r5")]
 position = Vector2(2017, -293)
 patrol_points = NodePath("Patrolpoints")
-damage_amount = 1
 
 [node name="Patrolpoints" type="Node2D" parent="Enemies/Enemycrab11" index="3" unique_id=219813131]
 position = Vector2(43, -10)
@@ -188,7 +182,6 @@ position = Vector2(-16, 21)
 [node name="Enemycrab12" parent="Enemies" index="11" unique_id=1618502603 node_paths=PackedStringArray("patrol_points") instance=ExtResource("4_e62r5")]
 position = Vector2(1687, -279)
 patrol_points = NodePath("Patrolpoints")
-damage_amount = 1
 
 [node name="Patrolpoints" type="Node2D" parent="Enemies/Enemycrab12" index="3" unique_id=786225113]
 position = Vector2(43, -10)
@@ -202,7 +195,6 @@ position = Vector2(-16, 21)
 [node name="Enemycrab13" parent="Enemies" index="12" unique_id=1943015944 node_paths=PackedStringArray("patrol_points") instance=ExtResource("4_e62r5")]
 position = Vector2(3190, -2)
 patrol_points = NodePath("Patrolpoints")
-damage_amount = 1
 
 [node name="Patrolpoints" type="Node2D" parent="Enemies/Enemycrab13" index="3" unique_id=1660971416]
 position = Vector2(43, -10)
@@ -216,7 +208,6 @@ position = Vector2(-16, 21)
 [node name="Enemycrab14" parent="Enemies" index="13" unique_id=32175274 node_paths=PackedStringArray("patrol_points") instance=ExtResource("4_e62r5")]
 position = Vector2(2548, -504)
 patrol_points = NodePath("Patrolpoints")
-damage_amount = 1
 
 [node name="Patrolpoints" type="Node2D" parent="Enemies/Enemycrab14" index="3" unique_id=507696618]
 position = Vector2(43, -10)
@@ -236,3 +227,15 @@ limit_left = -46
 limit_top = -645
 limit_right = 3307
 limit_bottom = 100
+
+[node name="Enemy_Dino" parent="." index="6" unique_id=1907456436 instance=ExtResource("6_rirls")]
+position = Vector2(775, -4)
+
+[node name="blue_coin" parent="." index="7" unique_id=646253081 instance=ExtResource("7_r1gwd")]
+position = Vector2(224, -96)
+
+[node name="green_coin" parent="." index="8" unique_id=1050404614 instance=ExtResource("8_jvpju")]
+position = Vector2(332, -105)
+
+[node name="red_coin" parent="." index="9" unique_id=1078180625 instance=ExtResource("9_e62r5")]
+position = Vector2(154, -121)

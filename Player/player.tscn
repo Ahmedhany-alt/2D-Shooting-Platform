@@ -315,7 +315,6 @@ debug_color = Color(0.9882954, 0, 0.3087558, 0.41960785)
 position = Vector2(18, 0)
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=250699382]
-visible = false
 collision_layer = 2
 collision_mask = 4
 
@@ -326,4 +325,9 @@ shape = SubResource("CapsuleShape2D_6nv6n")
 libraries/ = SubResource("AnimationLibrary_vtle1")
 autoplay = &"RESET"
 
+[node name="DamageTimer" type="Timer" parent="." unique_id=1203971344]
+ignore_time_scale = true
+
 [connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]
+[connection signal="body_exited" from="HurtBox" to="." method="_on_hurt_box_body_exited"]
+[connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]

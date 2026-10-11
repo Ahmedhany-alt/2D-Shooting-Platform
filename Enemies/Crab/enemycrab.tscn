@@ -82,7 +82,7 @@ animations = [{
 radius = 13.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6nv6n"]
-radius = 15.0
+radius = 28.0
 
 [node name="Enemycrab" type="CharacterBody2D" unique_id=1870059261 groups=["Enemy"]]
 collision_layer = 4
