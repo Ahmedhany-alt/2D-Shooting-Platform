@@ -124,16 +124,27 @@ func  player_animations():
 
 
 
+
+
+
+
+
+
+
+
+
 func player_death():
 	var player_death_effect_instance = player_death_effect.instantiate() as Node2D
 	player_death_effect_instance.global_position = global_position
 	get_parent().add_child(player_death_effect_instance)
 	queue_free()
 
-func input_movement():
-	var direction : float = Input.get_axis("move_left", "move_right")
-	
-	return direction
+
+
+
+
+
+
 
 
 
@@ -177,6 +188,17 @@ func apply_enemy_damage() -> void:
 	HealthManager.decrease_health(enemy.damage_amount)
 
 	if HealthManager.current_health <= 0:
+	if body.is_in_group("Enemy"):
+		print("Enemy_entered")
+		
+		var tween = get_tree().create_tween()
+		tween.tweeen_property(animated_sprite_2d, "material:shader_parameter/enabled", true,0)
+		tween.tweeen_property(animated_sprite_2d, "material:shader_parameter/enabled", false,0.2)
+		
+		
+		HealthManager.decrease_health(body.damage_amount) 
+	
+	if HealthManager.current_health == 0:
 		player_death()
 
 
