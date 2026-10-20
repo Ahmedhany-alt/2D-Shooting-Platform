@@ -14,10 +14,16 @@
 [ext_resource type="Script" uid="uid://c5x1c1gr35pp6" path="res://Player/player_states/idle_state.gd" id="12_p5o4e"]
 [ext_resource type="Script" uid="uid://0pixhis8oeds" path="res://Player/player_states/fall.gd" id="13_p5o4e"]
 [ext_resource type="Script" uid="uid://cctdtnsr3t2oh" path="res://Player/player_states/run.gd" id="14_gu6f8"]
+[ext_resource type="Script" uid="uid://dv57x3e1g8bkf" path="res://Player/jump.gd" id="15_dkpta"]
+[ext_resource type="Script" uid="uid://dyccgv0sym102" path="res://Player/shoot_stand.gd" id="16_n471f"]
+[ext_resource type="Script" uid="uid://cjvvt1whdnu4o" path="res://Player/shoot_crouch.gd" id="17_7emwf"]
+[ext_resource type="Script" uid="uid://fxy3hyjcmu5b" path="res://Player/shoot_run.gd" id="18_hshwv"]
+[ext_resource type="Script" uid="uid://df10ba075pay0" path="res://Player/shoot_wall_cling.gd" id="19_gpjlu"]
+[ext_resource type="Script" uid="uid://ooppuef0sked" path="res://Player/shoot_up.gd" id="20_8mwp6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_flgld"]
 shader = ExtResource("2_k53q1")
-shader_parameter/enabled = true
+shader_parameter/enabled = false
 shader_parameter/hit_colur = Color(1, 0.007843, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j2n6q"]
@@ -333,12 +339,12 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cpdn7"]
-height = 36.0
+height = 34.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6nv6n"]
 
 [node name="Player" type="CharacterBody2D" unique_id=288211789 groups=["Player"]]
-position = Vector2(0, -24)
+position = Vector2(0, 1)
 collision_layer = 2
 collision_mask = 17
 script = ExtResource("1_btcbx")
@@ -354,7 +360,7 @@ shape = SubResource("CapsuleShape2D_cpdn7")
 debug_color = Color(0.9882954, 0, 0.3087558, 0.41960785)
 
 [node name="Muzzle" type="Marker2D" parent="." unique_id=1188727259]
-position = Vector2(18, 0)
+position = Vector2(25, -1)
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=250699382]
 collision_layer = 2
@@ -362,6 +368,7 @@ collision_mask = 4
 
 [node name="HurtBoxCollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=402056486]
 shape = SubResource("CapsuleShape2D_6nv6n")
+debug_color = Color(0.5903418, 0.43976408, 0.8472959, 0.41960785)
 
 [node name="Statemachine" type="Node" parent="." unique_id=657693995 node_paths=PackedStringArray("initial_node_state")]
 script = ExtResource("11_5htga")
@@ -381,5 +388,41 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 script = ExtResource("14_gu6f8")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="jump" type="Node" parent="Statemachine" unique_id=1161795219 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("15_dkpta")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+max_jump_count = 5
+
+[node name="ShootStand" type="Node" parent="Statemachine" unique_id=1597066094 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle")]
+script = ExtResource("16_n471f")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+muzzle = NodePath("../../Muzzle")
+
+[node name="ShootCrouch" type="Node" parent="Statemachine" unique_id=69627239 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle")]
+script = ExtResource("17_7emwf")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+muzzle = NodePath("../../Muzzle")
+
+[node name="ShootRun" type="Node" parent="Statemachine" unique_id=1078015541 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle")]
+script = ExtResource("18_hshwv")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+muzzle = NodePath("../../Muzzle")
+
+[node name="ShootWallCling" type="Node" parent="Statemachine" unique_id=1429858488 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle")]
+script = ExtResource("19_gpjlu")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+muzzle = NodePath("../../Muzzle")
+
+[node name="ShootUp" type="Node" parent="Statemachine" unique_id=1859642435 node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle")]
+script = ExtResource("20_8mwp6")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+muzzle = NodePath("../../Muzzle")
 
 [connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]

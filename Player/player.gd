@@ -31,8 +31,8 @@ func _on_hurt_box_body_entered(body: Node2D) -> void:
 		print("Enemy_entered")
 		
 		var tween = get_tree().create_tween()
-		tween.tweeen_property(animated_sprite_2d, "material:shader_parameter/enabled", true,0)
-		tween.tweeen_property(animated_sprite_2d, "material:shader_parameter/enabled", false,0.2)
+		tween.tween_property(animated_sprite_2d, "material:shader_parameter/enabled", true,0)
+		tween.tween_property(animated_sprite_2d, "material:shader_parameter/enabled", false,0.2)
 		
 		
 		HealthManager.decrease_health(body.damage_amount) 

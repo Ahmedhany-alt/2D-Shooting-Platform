@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://6muh65475gt2" path="res://levels/base_level.tscn" id="1_0srwa"]
 [ext_resource type="PackedScene" uid="uid://owsqejlrl3tm" path="res://backgrounds/parallax_background.tscn" id="2_v5uil"]
-[ext_resource type="PackedScene" uid="uid://bodvs8825t1dv" path="res://Enemies/Crab/enemycrab.tscn" id="3_5722l"]
+[ext_resource type="PackedScene" uid="uid://bodvs8825t1dv" path="res://Enemies/enemycrab.tscn" id="3_5722l"]
 [ext_resource type="PackedScene" uid="uid://cy0etxg6pwcmp" path="res://UI/gamescreen.tscn" id="3_flgld"]
 [ext_resource type="PackedScene" uid="uid://c03syj85v3exy" path="res://Enemies/Dino/Enemy_Dino.tscn" id="5_dhp6s"]
 [ext_resource type="PackedScene" uid="uid://c6dqp6ec1d76q" path="res://UI/Main_Menu_Screen.tscn" id="5_ofabs"]
